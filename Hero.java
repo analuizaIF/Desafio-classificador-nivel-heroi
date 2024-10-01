@@ -1,22 +1,30 @@
 package desafio_Heroi;
 import java.util.Scanner;
 
-//tal codigo nao possui verificacao caso o valor XP seja negativo
-public class Heroi {
+public class Hero {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
-		//Variaveis
+		//Condicao
+		System.out.println("Não será aceito valores menores que zero!");
+		
+		//Variavel nome
 		System.out.print("Digite seu nome: ");
 		String nome = scanner.next();
 		
-		System.out.print("Digite sua quantidade de XP: ");
-		double xp =  scanner.nextDouble();
+		//Declarando variavel xp
+		double xp;
 		
-		//Declarando variavel de niveis
+		//Estrutra de repeticao, caso o valor seja menor que zero 
+		do {
+			System.out.print("Digite seu xp: ");
+			xp = scanner.nextDouble();
+		} while(xp < 0);
+		
+		//Declarando a variavel de nivel
 		String nivel_xp;
-		
-		//Eestrutura de condicao e operadores logicos
+			
+		//Estrututra de decisao (Do While) e operadores logicos
 		if (xp < 1000) {
 			nivel_xp = "Ferro";
 		} else if (xp >= 1001 && xp <= 2000) {
@@ -40,5 +48,4 @@ public class Heroi {
 		System.out.print("\nO(A) Heroí(na) "+ nome + ", está no nível XP: "+ nivel_xp);
 		System.out.print("\n============================================");
 	}
-
 }
